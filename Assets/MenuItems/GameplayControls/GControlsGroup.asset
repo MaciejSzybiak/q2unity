@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7548a8c76ad67934e90bf661f83c4d49, type: 3}
+  m_Name: GControlsGroup
+  m_EditorClassIdentifier: 
+  label: Gameplay controls
+  items:
+  - {fileID: 11400000, guid: cd7e8ff5ea04c6f42ac3e2747901be99, type: 2}
+  - {fileID: 11400000, guid: 4e6e523fd90a83c4184fee15e7918ebe, type: 2}
+  - {fileID: 11400000, guid: 2008480f13e4a0c4f8daf967079219e9, type: 2}
+  - {fileID: 11400000, guid: 8b6ea237dd71d2a4f8e25125d56b6257, type: 2}
+  - {fileID: 11400000, guid: 8bc073de13b4dd34ea44daec7e834eaf, type: 2}
+  - {fileID: 11400000, guid: b2f4fdd2ad9cf0948b3877d46b3c5f8a, type: 2}
+  - {fileID: 11400000, guid: fc19ca237a9a6f74db8cea88e30e0b75, type: 2}
+  - {fileID: 11400000, guid: 97f3722119740e345b055e24fff8afe0, type: 2}

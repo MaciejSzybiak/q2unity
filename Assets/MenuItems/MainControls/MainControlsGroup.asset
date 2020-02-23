@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7548a8c76ad67934e90bf661f83c4d49, type: 3}
+  m_Name: MainControlsGroup
+  m_EditorClassIdentifier: 
+  label: Main controls
+  items:
+  - {fileID: 11400000, guid: 30024d52e696f4c43b39a34e28793473, type: 2}
+  - {fileID: 11400000, guid: 64f644dbaf80d4449905259c221d7022, type: 2}
+  - {fileID: 11400000, guid: d4068bd2de6f12b40a29fae996b88a4a, type: 2}
+  - {fileID: 11400000, guid: 534283dff06f57f409771a62f0f146ab, type: 2}
+  - {fileID: 11400000, guid: 59b850f9726c7504eb9df02f8c7e2cbe, type: 2}
+  - {fileID: 11400000, guid: f26c66d3591515c45ac3713407947199, type: 2}
+  - {fileID: 11400000, guid: a875f6ac4e1751f448c4c5f439d9d4b2, type: 2}
+  - {fileID: 11400000, guid: fdf60d6dd7934794bbe11ce9a2a0f2b1, type: 2}

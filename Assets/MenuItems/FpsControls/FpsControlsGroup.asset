@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7548a8c76ad67934e90bf661f83c4d49, type: 3}
+  m_Name: FpsControlsGroup
+  m_EditorClassIdentifier: 
+  label: Framerate controls
+  items:
+  - {fileID: 11400000, guid: d1bb3aed8651f6248a335d1160aef1ed, type: 2}
+  - {fileID: 11400000, guid: 125f3ae1cd63b6543bd96a9b4ed719e6, type: 2}
+  - {fileID: 11400000, guid: 444834414720a3a4891ab4ff45213812, type: 2}
+  - {fileID: 11400000, guid: 04c7ea8caf7d50a49b775ef5ef93f04d, type: 2}
+  - {fileID: 11400000, guid: 41ef7f112aaa8974cbbd85d19d251f7c, type: 2}
+  - {fileID: 11400000, guid: 7c2eace67829792458a26271a84fdb62, type: 2}
