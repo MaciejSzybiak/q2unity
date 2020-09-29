@@ -1,13 +1,13 @@
 ## q2unity
-An abandoned project with goal to bring Quake II movement physics to Unity engine.
+This project is an attempt to bring Quake II movement physics to Unity engine.
 
 Presentation video: [click](https://www.youtube.com/watch?v=IuklKuGx-G8)
 
 ![screenshot](docs/img/screenshot.png)
 
 #### Important note
-For many reasons this project is no longer developed and because of that I'd rather not answer any questions
-about the following source code.
+The project's goal has been meet and this repository is no longer actively developed. Feel free to ask
+questions about this implementation if you have any.
 
 #### Movement support
 The project provides a fully functional Quake II movement in Unity (while using BSP maps).
