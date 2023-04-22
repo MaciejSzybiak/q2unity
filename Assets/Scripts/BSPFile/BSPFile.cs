@@ -899,154 +899,36 @@ public static class BSPFile
     }
 
     /// <summary>
-    /// A really scrappy way of parsing the ent string...
-    /// Don't judge me please.
+    /// Extracts entities from entstring
     /// </summary>
     private static bool ParseEntstring(ref BinaryReader reader, string mapname)
     {
-        if (ents == null)
-        {
-            ents = new List<BSPEnt>();
-        }
-
-        reader.BaseStream.Position = GetLumpOffset(BSPLumps.LUMP_ENTSTRING);
-
-        long charcount = reader.BaseStream.Length - reader.BaseStream.Position - 256;
-        char[] chars = reader.ReadChars((int)charcount);
-
+        char[] chars;
+        
         if (ResourceLoader.LoadFile("ent/" + mapname + ".ent", out byte[] bytes))
         {
             Console.DebugLog("Found ent file ent/" + mapname + ".ent");
             chars = System.Text.Encoding.UTF8.GetChars(bytes);
         }
-
-        Queue<char> q = new Queue<char>(chars);
-
-        char current;
-        string key = "";
-        string value = "";
-
-        while (q.Count > 0)
+        else
         {
-            current = q.Dequeue();
-
-            if (q.Count == 0)
-            {
-                break;
-            }
-            else if (current != '{')
-            {
-                if (current == '\0')
-                {
-                    Console.DebugLog("Entstring terminated by a null character.");
-                    break;
-                }
-                goto fail;
-            }
-
-            current = q.Dequeue();
-            while (char.IsControl(current) && current != '\n' && q.Count > 0)
-            {
-                current = q.Dequeue();
-            }
-            if (current != '\n')
-            {
-                goto fail;
-            }
-
-            BSPEnt ent = new BSPEnt();
-
-            current = q.Dequeue();
-
-            while (current != '}')
-            {
-                if (current != '"')
-                {
-                    goto fail;
-                }
-
-                current = q.Dequeue();
-                while (q.Count > 0 && current != '"')
-                {
-                    key += current;
-                    current = q.Dequeue();
-                }
-
-                current = q.Dequeue();
-                if (current != ' ')
-                {
-                    goto fail;
-                }
-
-                current = q.Dequeue();
-                if (current != '"')
-                {
-                    goto fail;
-                }
-
-                current = q.Dequeue();
-                while (q.Count > 0 && current != '"')
-                {
-                    value += current;
-                    current = q.Dequeue();
-                }
-
-                ent.strings.Add(key, value);
-
-                key = "";
-                value = "";
-
-                current = q.Dequeue();
-                while (char.IsControl(current) && current != '\n' && q.Count > 0)
-                {
-                    current = q.Dequeue();
-                }
-                if (current != '\n')
-                {
-                    goto fail;
-                }
-
-                if (q.Count == 0)
-                {
-                    goto fail;
-                }
-                current = q.Dequeue();
-            }
-
-            ents.Add(ent);
-
-            current = q.Dequeue();
-            if (current == '\0')
-            {
-                break;
-            }
-
-            while (char.IsControl(current) && current != '\n' && q.Count > 0)
-            {
-                current = q.Dequeue();
-            }
-            if (current != '\n' && q.Count > 0)
-            {
-                goto fail;
-            }
+            reader.BaseStream.Position = GetLumpOffset(BSPLumps.LUMP_ENTSTRING);
+            long charCount = GetLumpLength(BSPLumps.LUMP_ENTSTRING);
+            chars = reader.ReadChars((int)charCount);
         }
-
+        
+        ents = EntStringParser.Parse(chars);
+        
         foreach (BSPEnt ent in ents)
         {
             ent.ParseEntStrings();
-
+        
             if (ent.Classname == "worldspawn")
             {
                 worldspawn = ent;
             }
         }
-
+        
         return true;
-
-        fail:
-        Console.LogWarning("ENTSTRING: queue count: " + q.Count + " Incorrect ent char code: " + (int)current);
-
-        ents.Clear();
-        return false;
     }
 }
