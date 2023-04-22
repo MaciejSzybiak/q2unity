@@ -26,9 +26,10 @@ In order to play the game you will need the following:
 
 When you have all the prerequisites follow these steps to load a map:
 1. Import the project in Unity
-2. Click the Play button
-3. In the Game window go to Settings -> Folders
-4. Provide the full path to your Quake II installation in "Full Quake II game path" field (e.g. C:/Quake2)
-5. Make sure "Mod folder" is set to "baseq2"
-6. Click "Apply and save"
-7. Go back to main menu, hit Play and select a map to load it
+2. Open scene "SampleScene"
+3. Click the Play button
+4. In the Game window go to Settings -> Folders
+5. Provide the full path to your Quake II installation in "Full Quake II game path" field (e.g. C:/Quake2)
+6. Make sure "Mod folder" is set to "baseq2"
+7. Click "Apply and save"
+8. Go back to main menu, hit Play and select a map to load it
