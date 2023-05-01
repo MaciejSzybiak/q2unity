@@ -19,6 +19,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEngine;
 
 /*
  * Registers, parses and executes commands.
